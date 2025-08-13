@@ -1,6 +1,6 @@
 {
   "name": "mgstbl",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "js datatable",
   "main": "dist/mgstbl.min.js",
   "browser": "dist/mgstbl.min.js",
