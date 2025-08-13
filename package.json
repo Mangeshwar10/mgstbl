@@ -1,0 +1,22 @@
+{
+  "name": "mgstbl",
+  "version": "1.0.0",
+  "description": "js datatable",
+  "main": "index.js",
+  "scripts": {
+    "test": "mgstbl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mangeshwar10/mgstbl.git"
+  },
+  "keywords": [
+    "mgstbl"
+  ],
+  "author": "Mangesh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mangeshwar10/mgstbl/issues"
+  },
+  "homepage": "https://github.com/Mangeshwar10/mgstbl#readme"
+}
