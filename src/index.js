@@ -404,7 +404,7 @@ document.addEventListener('click', function (e) {
   const href = pageLink?.getAttribute('href');
   const totalPage = pageLink?.getAttribute('data-mxpage');
   if (href && href !== 'null') {
-    page = parseInt(href);
+    let page = parseInt(href);
     let nextPage = (page >= totalPage)?null:page+1;
     let prevPage = (page <= 1)?null:page-1;
     pageLink?.setAttribute('href', nextPage);
@@ -426,10 +426,10 @@ document.addEventListener('change', function (e) {
   const target = e.target;
   if (target.classList.contains('_mgsPerPageLimit')) {
     e.preventDefault();
-    limit = parseInt(target.value, 10);
-    page = 1;
-    prevPage = null;
-    nextPage = null;
+    let limit = parseInt(target.value, 10);
+    let page = 1;
+    let prevPage = null;
+    let nextPage = null;
     mgsDataTable({page,limit, prevPage, nextPage});
   }
 });
@@ -440,10 +440,10 @@ document.addEventListener('keyup', function (e) {
   if (target.classList.contains('_mgsSearchAnyField')) {
     e.preventDefault();
     if(e.key === "Enter"){
-        search = target.value;
-        page = 1;
-        column = '';
-        sort = '';
+        let search = target.value;
+        let page = 1;
+        let column = '';
+        let sort = '';
         document.querySelectorAll('._mgsSort').forEach((el) => {
           const text = _mgsCapitalizeFirstLetter (el.textContent.trim());
           el.innerHTML = `${text} <i class="fa fa-arrow-up" style="font-size:10px !important"></i>`;
@@ -456,13 +456,13 @@ document.addEventListener('keyup', function (e) {
 
 //for sorting
 document.addEventListener('click', function (e) {
-  const target = e.target.closest('._mgsSort');
-  if (!target) return;
-  e.preventDefault();
-  const page = 1;
-  const column = target.getAttribute('data-column');
-  const columnSortType = target.getAttribute('data-sort');
-    sort = columnSortType === 'asc'?'desc':'asc';
+    const target = e.target.closest('._mgsSort');
+    if (!target) return;
+    e.preventDefault();
+    const page = 1;
+    const column = target.getAttribute('data-column');
+    const columnSortType = target.getAttribute('data-sort');
+    let sort = columnSortType === 'asc'?'desc':'asc';
     mgsDataTable({page, column, sort});
 });
 
