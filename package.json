@@ -1,6 +1,6 @@
 {
   "name": "mgstbl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "js datatable",
   "main": "dist/mgstbl.min.js",
   "browser": "dist/mgstbl.min.js",
@@ -13,7 +13,14 @@
     "url": "git+https://github.com/Mangeshwar10/mgstbl.git"
   },
   "keywords": [
-    "mgstbl", "datatable", "table", "javascript", "pagination", "sorting", "browser", "UMD"
+    "mgstbl",
+    "datatable",
+    "table",
+    "javascript",
+    "pagination",
+    "sorting",
+    "browser",
+    "UMD"
   ],
   "author": "Mangesh",
   "license": "MIT",
