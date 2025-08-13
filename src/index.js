@@ -465,3 +465,9 @@ document.addEventListener('click', function (e) {
     sort = columnSortType === 'asc'?'desc':'asc';
     mgsDataTable({page, column, sort});
 });
+
+// Export globally for UMD/IIFE
+window.mgsDataTable = mgsDataTable;
+
+// If using modules
+export { mgsDataTable };
