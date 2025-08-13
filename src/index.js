@@ -466,7 +466,7 @@ document.addEventListener('click', function (e) {
     mgsDataTable({page, column, sort});
 });
 
-// sting to convert first letter of a string to uppercase
+// string to convert first letter of a string to uppercase
 function _mgsCapitalizeFirstLetter(str) {
     const capitalized = str.replace(/_/g,' ').replace(/\b\w/g, function(match) {return match.toUpperCase();});
     return capitalized;
