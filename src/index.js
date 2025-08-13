@@ -173,7 +173,7 @@ const mgsDataTable = async (data) => {
         const _mgsThead = document.createElement('thead');
         const _mgsHeadRow = document.createElement('tr');
         _mgsColumn.forEach((text, key) => {
-            text = this._mgsCapitalizeFirstLetter(text);
+            text = _mgsCapitalizeFirstLetter (text);
             const th = document.createElement('th');
             if(_mgsOutput?.length > 0 && isSorting){
                 th.classList.add('_mgsSort');
@@ -445,7 +445,7 @@ document.addEventListener('keyup', function (e) {
         column = '';
         sort = '';
         document.querySelectorAll('._mgsSort').forEach((el) => {
-          const text = this._mgsCapitalizeFirstLetter(el.textContent.trim());
+          const text = _mgsCapitalizeFirstLetter (el.textContent.trim());
           el.innerHTML = `${text} <i class="fa fa-arrow-up" style="font-size:10px !important"></i>`;
           el.setAttribute('data-sort', 'asc');
         });
@@ -474,6 +474,7 @@ function _mgsCapitalizeFirstLetter(str) {
 
 // Export globally for UMD/IIFE
 window.mgsDataTable = mgsDataTable;
+window._mgsCapitalizeFirstLetter  = _mgsCapitalizeFirstLetter ;
 
 // If using modules
-export { mgsDataTable };
+export { mgsDataTable, _mgsCapitalizeFirstLetter };
