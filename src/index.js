@@ -173,7 +173,7 @@ const mgsDataTable = async (data) => {
         const _mgsThead = document.createElement('thead');
         const _mgsHeadRow = document.createElement('tr');
         _mgsColumn.forEach((text, key) => {
-            text = capitalizeFirstLetter(text);
+            text = this._mgsCapitalizeFirstLetter(text);
             const th = document.createElement('th');
             if(_mgsOutput?.length > 0 && isSorting){
                 th.classList.add('_mgsSort');
@@ -445,7 +445,7 @@ document.addEventListener('keyup', function (e) {
         column = '';
         sort = '';
         document.querySelectorAll('._mgsSort').forEach((el) => {
-          const text = capitalizeFirstLetter(el.textContent.trim());
+          const text = this._mgsCapitalizeFirstLetter(el.textContent.trim());
           el.innerHTML = `${text} <i class="fa fa-arrow-up" style="font-size:10px !important"></i>`;
           el.setAttribute('data-sort', 'asc');
         });
@@ -467,7 +467,7 @@ document.addEventListener('click', function (e) {
 });
 
 // sting to convert first letter of a string to uppercase
-function capitalizeFirstLetter(str) {
+function _mgsCapitalizeFirstLetter(str) {
     const capitalized = str.replace(/_/g,' ').replace(/\b\w/g, function(match) {return match.toUpperCase();});
     return capitalized;
 }
